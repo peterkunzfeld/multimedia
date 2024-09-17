@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linksammlung - Index</title>
+</head>
+<body>
+
+
+{% if akt_Liste %}
+
+
+<h1>
+    Linksammlung zu
+    {{ akt_Daten.kate.anwendung.name }}</h1>
+<p>Playlist: {{ akt_DS.list.name }}</p>
+<p>Autor: {{ akt_DS.author.name }}</p>
+<p>{{ akt_DS.playlist_number }}. Einheit</p>
+<p>
+    <ol>
+    {% for punkt in akt_Liste %}
+        <li><a href="{{ punkt.href }}" target="_blank">{{ punkt.name }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>Keine Links vorhanden.</p>
+{% endif %}
+</p>
+</body>
+</html>
